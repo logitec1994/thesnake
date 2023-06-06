@@ -25,7 +25,15 @@ class Field:
 
     def __add_object(self):
         for i, v in enumerate(self.field_objects):
-            self.matrix[self.field_objects[i].position.x][self.field_objects[i].position.y] = self.field_objects[i].content
+            self.matrix[self.field_objects[i].coordinate.get_coordinate().x][self.field_objects[i].coordinate.get_coordinate().y] = self.field_objects[i].content
+
+    def collision(self):
+        if self.field_objects[0].coordinate.get_coordinate().x < 1 or\
+            self.field_objects[0].coordinate.get_coordinate().y < 1 or\
+            self.field_objects[0].coordinate.get_coordinate().x > self.size.height - 2 or\
+            self.field_objects[0].coordinate.get_coordinate().y > self.size.width - 2:
+            return True
+        return False
 
     def render(self):
         system("clear")
