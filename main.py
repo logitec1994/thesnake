@@ -20,14 +20,5 @@ if __name__ == "__main__":
     f.add(fo)
     while game_condition:
         f.render()
-        if not f.collision():
-            move = getch.getch()
-            match move:
-                case 'a': f.field_objects[0].move_left()
-                case 'd': f.field_objects[0].move_right()
-                case 's': f.field_objects[0].move_down()
-                case 'w': f.field_objects[0].move_up()
-        else:
-            print("Game is over")
-            break    
+        f.field_objects[0].controls()  
         time.sleep(0.1)
