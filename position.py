@@ -15,17 +15,17 @@ class Movable:
 
 @dataclass
 class Position(Movable):
-    self.pos_x: int
-    self.pos_y: int
+    pos_x: int
+    pos_y: int
 
     def move_up(self):
-        self.pos_x -= 1
+        self.pos_y -= 1
     
     def move_down(self):
-        self.pos_x += 1
+        self.pos_y += 1
 
     def move_left(self):
-        self.pos_y -= 1
+        self.pos_x -= 1
 
     def move_right(self):
-        self.pos_y += 1
+        self.pos_x += 1
