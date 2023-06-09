@@ -26,4 +26,4 @@ class Game:
         fo.position.move_left()
         f.add_object(fo)
         f.render()
-        print(fo.position.pos_x, fo.position.pos_y)
+        print(fo.position)

@@ -1,3 +1,5 @@
+from dataclasses import dataclass
+
 class Movable:
     def move_up(self):
         ...
@@ -11,10 +13,10 @@ class Movable:
     def move_right(self):
         ...
 
+@dataclass
 class Position(Movable):
-    def __init__(self, x, y):
-        self.pos_x = x
-        self.pos_y = y
+    self.pos_x: int
+    self.pos_y: int
 
     def move_up(self):
         self.pos_x -= 1
